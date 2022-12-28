@@ -44,12 +44,17 @@ public class App {
 			}
 		}
 		
-		System.out.println(spreadsheet.getRow(2).getCell(1).getStringCellValue());
+		//System.out.println(spreadsheet.getRow(2).getCell(1).getStringCellValue());
 
 		FileOutputStream out = new FileOutputStream(
 				new File("C:/Users/MPawar/Desktop/mahesh/learnings/java/alt/Student_Details.xlsx"));
 		workbook.write(out);
 		out.flush();
 		out.close();
+		
+		File file=new File("C:/Users/MPawar/Desktop/mahesh/learnings/java/alt/Student_Details.xlsx");
+		
+		ReadExcel read=new ReadExcel();
+		read.readExcel(file);
 	}
 }
